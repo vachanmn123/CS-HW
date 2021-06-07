@@ -1,23 +1,26 @@
-**Explain Function definition with syntax and example.**  
-***Syntax:***
+1. **Explain with example call by value and call by reference**  
+***   
+**__Call by value:__**  
+>Call by value means to pass to the function only the value of the variable. A copy of the data in the variable is created when a function is called by value.  
+
+***example***
 ```cpp
-return_type function_name(arguments_list){
-    statement 1;
-    statement 2;
-    .;
-    .;
-    statement N;
-    return return_value;
+void func(int inp){     //Pass by value
+    cout << inp;
+    inp = inp + 1;
 }
 ```
-***Example:***
+In the above example when the function is called by passing a value, the data in the variable is copied and used inside the function after the function exits, that copy is destroyed leaving the original value intact.  
+***
+**__Call by reference:__**
+>Call by reference means to pass to the function the memory location of the variable. No copy of the value is created in this case.  
+
+***example***  
 ```cpp
-// Function definition example:
-int cube(num){
-    cube = num*num*num;
-    return cube;
+void func(int &inp){
+    cout << inp;
+    inp = inp + 1;
 }
 ```
-**What is function Prototype?**  
-***definition***
-> A function prototype is a function declaration that specifies the data types of its arguments in the parameter list. The compiler uses the information in a function prototype to ensure that the corresponding function definition and all corresponding function declarations and calls within the scope of the prototype contain the correct number of arguments or parameters, and that each argument or parameter is of the correct data type. 
+In the above example when the function is called the memory location of the variable is passed so even when this function exits the value of the variable remains changed.
+***
